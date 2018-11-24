@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>coverlist</title>
+
+<!-- by Winston Ye -->
+
+<!-- CREDITS TO -->
+<!-- people who made FileSaver.js https://github.com/eligrey/FileSaver.js/
+    Lasnv from https://stackoverflow.com/a/8260383
+    ionicons at https://ionicons.com/
+-->
+
+<!-- stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<!-- body -->
+<body>
+	<h1 id="main-head" class="noselect">coverlist</h1>
+    
+    <!-- add music -->
+    <div class="container">
+        
+        <div class="add">
+            <div class="bar">
+                <p id="title" class="noselect">add covers</p>
+            </div>
+            <form action="">
+                <h3>Title</h3>
+                <input type="text" name="title">
+                <h3>URL</h3>
+                <input onclick="this.select()" type="text" name="trackurl">
+                <h3>Original Artist (optional)</h3>
+                <input type="text" name="artist">
+
+            <i id="addicon" class="material-icons noselect" onclick="addCover()">add_circle_outline</i>
+            </form>
+
+        </div>
+
+        <!-- current playlist -->
+        <div class="tracks-container">
+            <div class="bar">
+                <p id="title" class="noselect">my playlist</p>
+            </div>
+            <table id="tracks-table" class="tracks">
+              <tr id="tracks-head">
+                <th>#</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Covers</th>
+                <th><i class="material-icons">access_time</i></th>
+              </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div  class= "player">
+            <div class="bar">
+                <p id="title" class="noselect">player</p>
+            </div>
+            <div id="player"></div>
+        </div>
+    </div>
+
+    <div class="controller noselect">
+        <ion-icon name="rewind" onclick="advancePlaylist('back')"></ion-icon>
+        <ion-icon name="play" id="pausePlayer"></ion-icon>
+        <ion-icon name="fastforward" onclick="advancePlaylist('forward')"></ion-icon>
+        <ion-icon name="save" onclick="savePlaylist()" title="Save"></ion-icon>
+        <ion-icon name="cloud-upload" onclick="loadPlaylist()" title="Load"></ion-icon>
+        <p id="videoName"></p>
+        <p id="watermark">v0.01</p>
+    </div>
+
+</body>
+
+<!-- scripts -->
+    <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/playlist.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.4.7/dist/ionicons.js"></script>
+
+</html>
