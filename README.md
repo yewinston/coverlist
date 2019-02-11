@@ -4,14 +4,17 @@ coverlist is a YouTube music player that lets you create **nested** playlists, g
 
 ### Example
 Let's say you want to listen to multiple covers of Bill Wither's,  **Lean On Me**:
+
 | Artist | YouTube URL |
-| ------ | ------ |
+| --- | --- |
 |Bill Withers (original)|...|
 |Glee|...|
 |Kirk Franklin|...|
+
 And a ton of covers of **Lost** by Frank Ocean:
+
 | Artist | YouTube URL |
-| ------ | ------ |
+| --- | --- |
 |Frank Ocean (original)|...|
 |Jorja Smith|...|
 |Khalid|...|
@@ -26,3 +29,4 @@ This is a **work in progress** project and is built during my spare time, feel f
 
 | Version | Source |
 | ------ | ------ |
+| v0.02 | [sfu.ca/~winstony](http://www.sfu.ca/~winstony/coverlist/coverlist.html) |
