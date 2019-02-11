@@ -22,7 +22,7 @@ function newPlaylist(playlistName){
 				if(playlist.tracks[i].name == trackName){
 					// check if url already exists
 					if(playlist.tracks[i].urls.includes(url)){
-						console.log(playlist.tracks[i].name + " already contains url: " + url);
+						alert(playlist.tracks[i].name + " already contains url: " + url);
 					}
 					// add it if it isn't
 					else{

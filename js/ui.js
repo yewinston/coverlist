@@ -6,7 +6,6 @@ var currPlaylist = newPlaylist("playlist1");
 var currentID = "";
 var currentNum = 0;
 
-// STILL HAVEN'T COVERED CASE: REPEAT URL.
 function addCover(trackName, trackArtist, trackURL){
 
     // ONLY IF USER ISN'T LOADING PLAYLIST, THEN USE THE VALUES IN FIELDS
@@ -34,10 +33,12 @@ function addCover(trackName, trackArtist, trackURL){
     
     // add the track, if it doesn't exist then add new row
     if(currPlaylist.addTrack(trackName, trackURL, trackArtist) == true){
+
+    	var trackIndex = currPlaylist.orgTracks.indexOf(trackName)+1;
         
         currPlaylistT.append($('<tr>')
             .append($('<td>')
-                .text(currPlaylist.orgTracks.indexOf(trackName)+1) // index of the track within the playlist
+                .text(trackIndex) // index of the track within the playlist
                 )
 
             .append($('<td>')
@@ -65,6 +66,8 @@ function addCover(trackName, trackArtist, trackURL){
             var trackNum = $(this).children("td")[0].textContent;
             changePlayer(trackName, trackNum);
         });
+
+        changePlayer(trackName, trackIndex); // give the user immediate feedback, play the video
     }
     
     // add to covers 
@@ -89,13 +92,13 @@ function savePlaylist(){
     console.log('Playlist saved.');
 }
 
-// TODO: load playlist should also stop the current track if its playing one
+// TODO: multi-loading -> shouldn't use playlist1 as name.
 function loadPlaylist(){
     var tempPlaylist;
     var playlistStr = prompt("Please enter your playlist.txt contents below.");
 
     if((playlistStr == null)||(playlistStr == "")){
-        alert("Error. Contents are invalid.");
+        alert("Error. Contents are invalid. Please check playlist.txt. If problem persists, please submit issue on GitHub.");
         return;
     }
     else{
@@ -114,8 +117,7 @@ function loadPlaylist(){
         rows++;
     }
 
-    // restart values
-    currentID = "";
+    // restart current track number to be 0 (start of playlist)
     currentNum = 0;
 
     console.log("Loading: " + playlistStr)
@@ -127,11 +129,16 @@ function loadPlaylist(){
             // using addCover(name, artist, url)
             addCover(tempPlaylist.tracks[i].name, tempPlaylist.tracks[i].artist, tempPlaylist.tracks[i].urls[j]);
             console.log("Adding " + tempPlaylist.tracks[i].urls[j] + " to " + tempPlaylist.tracks[i].name);
+
+            // take the first track within playlist and load it within player
+            if((i == 0)&&(j == 0)){
+            	currentID = tempPlaylist.tracks[i].urls[j];
+            	player.loadVideoById(currentID);
+            }
         }
     }
 
     console.log("Load complete.")
-
 }
 
 function changePlayer(trackName, trackNum){
