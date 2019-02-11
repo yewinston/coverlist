@@ -104,6 +104,15 @@ tr:hover td{
     padding: 15px;
 }
 
+.controller #volumeRocker{
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    bottom: 70px;
+    left: 10px;
+    visibility: hidden;
+}
+
 .controller #videoName{
     font-size: 20px;
     float:left;
@@ -119,6 +128,7 @@ tr:hover td{
     z-index: 1;
     right: 8px;
 }
+
 
 /* general */
 

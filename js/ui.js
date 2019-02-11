@@ -1,5 +1,10 @@
+// playlist UI
 var currPlaylistT = $("#tracks-table");
 var htmlPlaylistT = document.getElementById("tracks-table");
+
+// volume ui
+var volumeUI = document.getElementById("volumeRocker");
+var volumeVisible = false;
 
 // temp: multiple playlists not implemented
 var currPlaylist = newPlaylist("playlist1");
@@ -261,4 +266,23 @@ function advancePlaylist(direction){
         console.log("Next track is: " + nextTrackName);
         changePlayer(nextTrackName, parseInt(currentNum)+move);
     }
+}
+
+// Function: opens up volume rocker
+function volumeRocker(){
+    if(volumeVisible == true){
+        volumeVisible = false;
+        volumeUI.style.visibility = "hidden";
+    }
+    else{
+        volumeVisible = true;
+        volume = player.getVolume();
+        volumeUI.value = volume;
+        volumeUI.style.visibility = "visible";
+    }
+}
+
+// dragging of slider
+volumeUI.oninput = function(){
+    player.setVolume(this.value);
 }

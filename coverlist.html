@@ -27,14 +27,14 @@
         
         <div class="add">
             <div class="bar">
-                <p id="title" class="noselect">add covers</p>
+                <p id="title" class="noselect">add</p>
             </div>
             <form action="">
                 <h3>Title</h3>
                 <input type="text" name="title">
-                <h3>URL</h3>
+                <h3>YouTube URL</h3>
                 <input onclick="this.select()" type="text" name="trackurl">
-                <h3>Original Artist (optional)</h3>
+                <h3>Original Artist</h3>
                 <input type="text" name="artist">
 
             <i id="addicon" class="material-icons noselect" onclick="addCover()">add_circle_outline</i>
@@ -69,13 +69,15 @@
     </div>
 
     <div class="controller noselect">
-        <ion-icon name="rewind" onclick="advancePlaylist('back')"></ion-icon>
-        <ion-icon name="play" id="pausePlayer"></ion-icon>
-        <ion-icon name="fastforward" onclick="advancePlaylist('forward')"></ion-icon>
+        <ion-icon name="rewind" onclick="advancePlaylist('back')" title="Back"></ion-icon>
+        <ion-icon name="play" id="pausePlayer" title="Play"></ion-icon>
+        <ion-icon name="fastforward" onclick="advancePlaylist('forward')" title="Next"></ion-icon>
+        <ion-icon name="volume-high" onclick="volumeRocker()" title="Volume"></ion-icon>
         <ion-icon name="save" onclick="savePlaylist()" title="Save"></ion-icon>
         <ion-icon name="cloud-upload" onclick="loadPlaylist()" title="Load"></ion-icon>
         <p id="videoName"></p>
-        <p id="watermark">v0.02</p>
+        <p id="watermark">v0.03</p>
+        <input id="volumeRocker" type="range" min="0" max="100" value="50">
     </div>
 
 </body>
