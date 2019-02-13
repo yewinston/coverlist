@@ -59,6 +59,7 @@
         </div>
     </div>
     
+    <!-- player -->
     <div class="container">
         <div  class= "player">
             <div class="bar">
@@ -68,6 +69,7 @@
         </div>
     </div>
 
+    <!-- controller ui -->
     <div class="controller noselect">
         <ion-icon name="rewind" onclick="advancePlaylist('back')" title="Back"></ion-icon>
         <ion-icon name="play" id="pausePlayer" title="Play"></ion-icon>
@@ -78,6 +80,11 @@
         <p id="videoName"></p>
         <p id="watermark">v0.03</p>
         <input id="volumeRocker" type="range" min="0" max="100" value="50">
+    </div>
+
+    <!-- volume UI -->
+    <div class="volPopup">
+    	<h1 id="volumeText">100</h2>
     </div>
 
 </body>

@@ -282,7 +282,14 @@ function volumeRocker(){
     }
 }
 
-// dragging of slider
+// Function: change player volume, fade in numeric volume, change text, fade out
+// ISSUE: inefficient, CPU usage high when dragging back and forth (function calls)
 volumeUI.oninput = function(){
     player.setVolume(this.value);
+    document.getElementById("volumeText").innerHTML = this.value;
+    $("#volumeText").show();
+}
+
+volumeUI.onchange = function(){
+    $("#volumeText").delay(250).fadeOut(1250);
 }
