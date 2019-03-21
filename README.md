@@ -11,7 +11,7 @@ Let's say you want to listen to multiple covers of Bill Wither's,  **Lean On Me*
 |Glee|...|
 |Kirk Franklin|...|
 
-And a ton of covers of **Lost** by Frank Ocean:
+Or a ton of covers of **Lost** by Frank Ocean:
 
 | Artist | YouTube URL |
 | --- | --- |
@@ -20,8 +20,8 @@ And a ton of covers of **Lost** by Frank Ocean:
 |Khalid|...|
 |MØ|...|
 
-coverlist will help you out: a cover of a song will never play back to back. 
-coverlist will pick one **Lean On Me** cover and will pick another random cover of **Lost** upon completion.
+coverlist will help you out and a cover of the song never plays back to back. 
+coverlist will pick one **Lean On Me** cover and will pick a random cover of **Lost** upon completion.
 
 ## Try it Out
 
