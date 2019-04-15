@@ -46,6 +46,10 @@
         <div class="tracks-container">
             <div class="bar">
                 <p id="title" class="noselect">my playlist</p>
+                <select id="playlistSelect" onchange="loadPlaylist(value)">
+                    <option value="empty">Empty (THIS IS WIP)</option>
+                    <option value="select">Playlist 1</option>
+                </select>
             </div>
             <table id="tracks-table" class="tracks">
               <tr id="tracks-head">
@@ -59,6 +63,7 @@
         </div>
     </div>
     
+    <!-- player -->
     <div class="container">
         <div  class= "player">
             <div class="bar">
@@ -68,6 +73,7 @@
         </div>
     </div>
 
+    <!-- controller ui -->
     <div class="controller noselect">
         <ion-icon name="rewind" onclick="advancePlaylist('back')" title="Back"></ion-icon>
         <ion-icon name="play" id="pausePlayer" title="Play"></ion-icon>
@@ -75,9 +81,24 @@
         <ion-icon name="volume-high" onclick="volumeRocker()" title="Volume"></ion-icon>
         <ion-icon name="save" onclick="savePlaylist()" title="Save"></ion-icon>
         <ion-icon name="cloud-upload" onclick="loadPlaylist()" title="Load"></ion-icon>
+        <ion-icon name="color-filter" onclick="openThemePicker()" title="Themes"></ion-icon>
         <p id="videoName"></p>
-        <p id="watermark">v0.03</p>
+        <p id="watermark">v0.04</p>
         <input id="volumeRocker" type="range" min="0" max="100" value="50">
+    </div>
+
+    <!-- volume UI -->
+    <div class="volPopup">
+    	<h1 id="volumeText">100</h2>
+    </div>
+
+    <!-- theme UI -->
+    <div id="themeUI">
+    	<div name="Default" class="themeChoice" style="background-color: #f5709e" onclick="changeTheme('#f5709e')"></div>
+    	<div class="themeChoice" style="background-color: #b39283" onclick="changeTheme('#b39283')"></div>
+    	<div class="themeChoice" style="background-color: #dddddd" onclick="changeTheme('#dddddd')"></div>
+    	<div class="themeChoice" style="background-color: turquoise" onclick="changeTheme('turquoise')"></div>
+    	<div class="themeChoice" style="background-color: lavender" onclick="changeTheme('lavender')"></div>
     </div>
 
 </body>

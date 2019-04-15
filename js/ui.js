@@ -6,6 +6,10 @@ var htmlPlaylistT = document.getElementById("tracks-table");
 var volumeUI = document.getElementById("volumeRocker");
 var volumeVisible = false;
 
+// colour ui
+var themeUI = document.getElementById("themeUI");
+var themeVisible = false;
+
 // temp: multiple playlists not implemented
 var currPlaylist = newPlaylist("playlist1");
 var currentID = "";
@@ -98,9 +102,19 @@ function savePlaylist(){
 }
 
 // TODO: multi-loading -> shouldn't use playlist1 as name.
-function loadPlaylist(){
+function loadPlaylist(playlistStr){
     var tempPlaylist;
-    var playlistStr = prompt("Please enter your playlist.txt contents below.");
+
+    if(playlistStr == 'select'){
+    	var playlistStr = allPlaylists[1];	
+    }
+    else if(playlistStr == 'empty'){
+    	var playlistStr = allPlaylists[0];
+    }
+
+    else if(playlistStr == null){
+    	playlistStr = prompt("Please enter your playlist.txt contents below.");
+    }
 
     if((playlistStr == null)||(playlistStr == "")){
         alert("Error. Contents are invalid. Please check playlist.txt. If problem persists, please submit issue on GitHub.");
@@ -174,7 +188,7 @@ var player;
 
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
-	  height: '180',
+	  height: '184',
 	  width: '320',
 	  videoId: '',
 	  playerVars: { 'autoplay': 1, 'controls':0, 'rel': 0 },
@@ -282,7 +296,42 @@ function volumeRocker(){
     }
 }
 
-// dragging of slider
+// Function: opens up theme picker
+function openThemePicker(){
+    if(themeVisible == true){
+        themeVisible = false;
+        themeUI.style.visibility = "hidden";
+    }
+    else{
+        themeVisible = true;
+        themeUI.style.visibility = "visible";
+    }
+}
+
+function changeTheme(newColor){
+    var bars = document.getElementsByClassName('bar');
+    // var bottomBar = document.getElementById('tracks-head');
+
+    document.getElementsByClassName('controller')[0].style.backgroundColor = newColor;
+
+
+    for(var i = 0; i < bars.length; i++){
+        bars[i].style.backgroundColor = newColor;
+    }
+
+    // for(var i = 0; i < bottomBar.cells.length; i++){ 
+    //     bottomBar.cells[i].style.backgroundColor = newColor
+    // }
+}
+
+// Function: change player volume, fade in numeric volume, change text, fade out
+// ISSUE: inefficient, CPU usage high when dragging back and forth (function calls)
 volumeUI.oninput = function(){
     player.setVolume(this.value);
+    document.getElementById("volumeText").innerHTML = this.value;
+    $("#volumeText").show();
+}
+
+volumeUI.onmouseup = function(){
+    $("#volumeText").delay(250).fadeOut(1250);
 }

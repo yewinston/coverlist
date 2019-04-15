@@ -1,4 +1,5 @@
-var allPlaylists = {};
+var allPlaylists = ['{"name":"playlist1","tracks":[],"orgTracks":[]}','{"name":"playlist1","tracks":[{"name":"Self Control","artist":"Frank Ocean","urls":["jzOax1qmFK8","oX6MPhbedok","lmxxdMpKivk","9s2JY-RF-n8"]},{"name":"Signs","artist":"Drake","urls":["wQvGxnDfCn4","ZOgfk08OpJE"]},{"name":"Lost","artist":"Frank Ocean","urls":["QdyOV1G3jv4","pyViesxqHTM","eU3hNCHpf5c"]},{"name":"Lonely","artist":"Jamila Woods","urls":["n1h750orrRU"]},{"name":"Bleach","artist":"Brockhampton","urls":["76uohoE-Z04","fZFEDELVYso"]}],"orgTracks":["Self Control","Signs","Lost","Lonely","Bleach"]}'];
+
 
 function newPlaylist(playlistName){
 	var playlist = {};
