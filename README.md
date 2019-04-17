@@ -1,9 +1,9 @@
 # coverlist
 
-coverlist is a YouTube music player that lets you create **nested** playlists, great for people who listen to lots of music covers.
+coverlist is a YouTube music player that creates **nested** playlists which is great for people who listen to many music covers.
 
 ### Example
-Let's say you want to listen to multiple covers of Bill Wither's,  **Lean On Me**:
+As an example, you want to listen to multiple covers of Bill Wither's  **Lean On Me**:
 
 | Artist | YouTube URL |
 | --- | --- |
@@ -11,7 +11,7 @@ Let's say you want to listen to multiple covers of Bill Wither's,  **Lean On Me*
 |Glee|...|
 |Kirk Franklin|...|
 
-And a ton of covers of **Lost** by Frank Ocean:
+And many covers of **Lost** by Frank Ocean:
 
 | Artist | YouTube URL |
 | --- | --- |
@@ -20,12 +20,12 @@ And a ton of covers of **Lost** by Frank Ocean:
 |Khalid|...|
 |MØ|...|
 
-coverlist will help you out: a cover of a song will never play back to back. 
-coverlist will pick one **Lean On Me** cover and will pick another random cover of **Lost** upon completion.
+coverlist will make sure covers of the same song will never be played one after the other. 
+coverlist picks one **Lean On Me** cover and then picks a random cover of **Lost** upon completion.
 
 ## Try it Out
 
-This is a **work in progress** project and is built during my spare time, feel free to try it out! A live demo can be found via one of the sources below:
+This is a **work in progress** and is built during my spare time. Feel free to try it out! A live demo can be found via one of the sources below:
 
 | Version | Source |
 | ------ | ------ |
