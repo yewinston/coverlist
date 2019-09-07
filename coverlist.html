@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>coverlist</title>
-
+f
 <!-- by Winston Ye -->
 
 <!-- CREDITS TO -->
@@ -13,34 +13,44 @@
 -->
 
 <!-- stylesheets -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <!-- body -->
 <body>
-	<h1 id="main-head" class="noselect">coverlist</h1>
+    <h1 id="main-head" class="noselect">coverlist</h1>
+    
+    <div class='container'>
     
     <!-- add music -->
-    <div class="container">
-        
-        <div class="add">
-            <div class="bar">
-                <p id="title" class="noselect">add</p>
+    <div class="sideBarContainer container">
+        <div class="container">
+            <div class="add">
+                <div class="bar">
+                    <p id="title" class="noselect">add</p>
+                </div>
+                <form action="">
+                    <h3>Title</h3>
+                    <input type="text" name="title">
+                    <h3>YouTube URL</h3>
+                    <input onclick="this.select()" type="text" name="trackurl">
+                    <h3>Original Artist</h3>
+                    <input type="text" name="artist">
+
+                <i id="addicon" class="material-icons noselect" onclick="addCover()">add_circle_outline</i>
+                </form>
             </div>
-            <form action="">
-                <h3>Title</h3>
-                <input type="text" name="title">
-                <h3>YouTube URL</h3>
-                <input onclick="this.select()" type="text" name="trackurl">
-                <h3>Original Artist</h3>
-                <input type="text" name="artist">
-
-            <i id="addicon" class="material-icons noselect" onclick="addCover()">add_circle_outline</i>
-            </form>
-
         </div>
+
+        <!-- player -->
+        <div class="container">
+            <div  class= "player">
+                <div id="player"></div>
+            </div>
+        </div>
+    </div>
 
         <!-- current playlist -->
         <div class="tracks-container">
@@ -53,35 +63,28 @@
             </div>
             <table id="tracks-table" class="tracks">
               <tr id="tracks-head">
-                <th>#</th>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Covers</th>
-                <th><i class="material-icons">access_time</i></th>
+                <th class="track-info"> #</th>
+                <th class="track-info">Title</th>
+                <th class="track-info">Artist</th>
+                <th class="track-info">Covers</th>
+                <th class="track-info"><i class="material-icons">access_time</i></th>
               </tr>
             </table>
         </div>
     </div>
+</div>
+
     
-    <!-- player -->
-    <div class="container">
-        <div  class= "player">
-            <div class="bar">
-                <p id="title" class="noselect">player</p>
-            </div>
-            <div id="player"></div>
-        </div>
-    </div>
 
     <!-- controller ui -->
     <div class="controller noselect">
-        <ion-icon name="rewind" onclick="advancePlaylist('back')" title="Back"></ion-icon>
-        <ion-icon name="play" id="pausePlayer" title="Play"></ion-icon>
-        <ion-icon name="fastforward" onclick="advancePlaylist('forward')" title="Next"></ion-icon>
-        <ion-icon name="volume-high" onclick="volumeRocker()" title="Volume"></ion-icon>
-        <ion-icon name="save" onclick="savePlaylist()" title="Save"></ion-icon>
-        <ion-icon name="cloud-upload" onclick="loadPlaylist()" title="Load"></ion-icon>
-        <ion-icon name="color-filter" onclick="openThemePicker()" title="Themes"></ion-icon>
+        <ion-icon class='controllerOption' name="rewind" onclick="advancePlaylist('back')" title="Back"></ion-icon>
+        <ion-icon class='controllerOption' name="play" id="pausePlayer" title="Play"></ion-icon>
+        <ion-icon class='controllerOption' name="fastforward" onclick="advancePlaylist('forward')" title="Next"></ion-icon>
+        <ion-icon class='controllerOption' name="volume-high" onclick="volumeRocker()" title="Volume"></ion-icon>
+        <ion-icon class='controllerOption' name="save" onclick="savePlaylist()" title="Save"></ion-icon>
+        <ion-icon class='controllerOption' name="cloud-upload" onclick="loadPlaylist()" title="Load"></ion-icon>
+        <ion-icon class='controllerOption' name="color-filter" onclick="openThemePicker()" title="Themes"></ion-icon>
         <p id="videoName"></p>
         <p id="watermark">v0.04</p>
         <input id="volumeRocker" type="range" min="0" max="100" value="50">
@@ -94,12 +97,12 @@
 
     <!-- theme UI -->
     <div id="themeUI">
-    	<div name="Default" class="themeChoice" style="background-color: #f5709e" onclick="changeTheme('#f5709e')"></div>
-    	<div class="themeChoice" style="background-color: #b39283" onclick="changeTheme('#b39283')"></div>
-    	<div class="themeChoice" style="background-color: #dddddd" onclick="changeTheme('#dddddd')"></div>
-    	<div class="themeChoice" style="background-color: turquoise" onclick="changeTheme('turquoise')"></div>
-    	<div class="themeChoice" style="background-color: lavender" onclick="changeTheme('lavender')"></div>
-    </div>
+        <div name="DarkDefault" class="themeChoice" style="background-color: #3c4f65" onclick="changeTheme('#3c4f65', 1)"></div>
+    	<div name="Default" class="themeChoice" style="background-color: #f5709e" onclick="changeTheme('#f5709e', 0)"></div>
+    	<div class="themeChoice" style="background-color: #dddddd" onclick="changeTheme('#dddddd', 0)"></div>
+    	<div class="themeChoice" style="background-color: turquoise" onclick="changeTheme('turquoise, 0')"></div>
+    	<div class="themeChoice" style="background-color: lavender" onclick="changeTheme('lavender'), 0"></div>
+    </div>  
 
 </body>
 

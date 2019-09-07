@@ -189,7 +189,7 @@ var player;
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('player', {
 	  height: '184',
-	  width: '320',
+	  width: '325',
 	  videoId: '',
 	  playerVars: { 'autoplay': 1, 'controls':0, 'rel': 0 },
 	  events: {
@@ -308,12 +308,50 @@ function openThemePicker(){
     }
 }
 
-function changeTheme(newColor){
+
+//pls remove this later
+changeTheme('#3c4f65', 1);
+
+function changeTheme(newColor, darkMode){
     var bars = document.getElementsByClassName('bar');
+    var themeUI = document.getElementById('themeUI');
+    var controllerIcons = document.getElementsByClassName('controllerOption');
+    var trackInfo = document.getElementsByClassName('track-info');
+    var title = document.getElementById('main-head');
+ 
     // var bottomBar = document.getElementById('tracks-head');
 
-    document.getElementsByClassName('controller')[0].style.backgroundColor = newColor;
+    if(darkMode == 1){
+        document.body.style.backgroundColor = "#33313b";
+        
+        title.style.backgroundColor = "white";
 
+        for(var i = 0; i < controllerIcons.length; i++){
+            controllerIcons[i].style.color = "white";
+        }
+
+        for(var i = 0; i < trackInfo.length; i++){
+            trackInfo[i].style.backgroundColor = "#4d5f73"; 
+            trackInfo[i].style.color = "#ffffff";
+        }
+    }
+    else if(darkMode == 0){
+        document.body.style.backgroundColor = "#E7ECEF";
+        
+        title.style.backgroundColor = "#565656";
+
+        document.body.style.backgroundColor = "E7ECEF";
+        for(var i = 0; i < controllerIcons.length; i++){
+            controllerIcons[i].style.color = "black";  
+        }
+        
+        for(var i = 0; i < trackInfo.length; i++){
+            trackInfo[i].style.backgroundColor = "#E7ECEF"; 
+            trackInfo[i].style.color = "black";
+        }
+    }   
+
+    document.getElementsByClassName('controller')[0].style.backgroundColor = newColor;
 
     for(var i = 0; i < bars.length; i++){
         bars[i].style.backgroundColor = newColor;

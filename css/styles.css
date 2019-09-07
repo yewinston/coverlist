@@ -14,6 +14,10 @@
     display: flex;
 }
 
+.sideBarContainer{
+    flex-direction: column;
+}
+
 .tracks-container{
 	flex-grow: 1;
 	margin: 1%;
@@ -23,11 +27,11 @@
 
 /* add */
 .add{
-	margin: 1%;
-	width: 320px;
+    width: 325px;
+    margin-bottom: 1%;
     background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    height: 270px;
+    height: 290px;
 }
 
 #addicon{
@@ -40,7 +44,7 @@
 /* player */
 .player{
 	width: 320px;
-    height: 240px;
+    height: 184px;
     margin: 1%;
     margin-bottom: 100px;
     background-color: #ffffff;
@@ -58,7 +62,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    background: #f5709e;
+    background: #3c4f65;
     color: white;
     padding: 10px;
 }
@@ -68,18 +72,27 @@
     text-align: left;
 }
 
+.track-info{
+    text-align: center;
+}
+
 .tracks{
     font-size: 14px;
     width: 100%;
     border-collapse: collapse;
 }
 
+
 td{
+    text-align: center;
+    text-overflow: ellipsis;
     padding: 10px;
-    border-bottom: 2px solid rgba(245, 112, 158, 0.31);
+    border-bottom: 2px solid rgba(245, 112, 158, 0.31);\
 }
 
 tr:hover td{
+    text-align: center;
+    text-overflow: ellipsis;
     background-color: rgba(245, 112, 158, 0.31);
     transition: background-color 0.1s linear;
     cursor: pointer;
@@ -195,7 +208,7 @@ tr:hover td{
 }
 
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h3{
