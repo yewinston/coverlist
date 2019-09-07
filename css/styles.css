@@ -20,7 +20,7 @@
 
 .tracks-container{
 	flex-grow: 1;
-	margin: 1%;
+	margin-left: 0.5%;
     background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
@@ -28,7 +28,7 @@
 /* add */
 .add{
     width: 325px;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     height: 290px;
@@ -45,7 +45,6 @@
 .player{
 	width: 320px;
     height: 184px;
-    margin: 1%;
     margin-bottom: 100px;
     background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -87,14 +86,14 @@ td{
     text-align: center;
     text-overflow: ellipsis;
     padding: 10px;
-    border-bottom: 2px solid rgba(245, 112, 158, 0.31);\
+    border-bottom: 2px solid #fde4ed;
 }
 
 tr:hover td{
     text-align: center;
     text-overflow: ellipsis;
-    background-color: rgba(245, 112, 158, 0.31);
-    transition: background-color 0.1s linear;
+    background-color: #fef1f6;
+    transition: background-color 0.05s linear;
     cursor: pointer;
 }
 
@@ -126,7 +125,7 @@ tr:hover td{
 .controller #videoName{
     font-size: 20px;
     float:left;
-    margin-top: 4px;
+    margin-top: 1px;
     margin-left: 40px;
     color: white;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
@@ -197,14 +196,16 @@ tr:hover td{
 
 #main-head{
 	margin: 1px;
-	font-size: 82px;
+    font-size: 82px;
+    font-family: 'Roboto', sans-serif;
 	text-align: center;
 	background-color: #565656;
-  	color: transparent;
+      color: transparent;
   	text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
   	-webkit-background-clip: text;
     -moz-background-clip: text;
           background-clip: text;
+    
 }
 
 *{

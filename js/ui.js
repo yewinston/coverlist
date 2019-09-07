@@ -63,7 +63,7 @@ function addCover(trackName, trackArtist, trackURL){
                 )
 
             .append($('<td>')
-                .text("-") // duration
+                .text(" ") // now playing
                 )
             );
 
@@ -308,10 +308,6 @@ function openThemePicker(){
     }
 }
 
-
-//pls remove this later
-changeTheme('#3c4f65', 1);
-
 function changeTheme(newColor, darkMode){
     var bars = document.getElementsByClassName('bar');
     var themeUI = document.getElementById('themeUI');
@@ -373,3 +369,7 @@ volumeUI.oninput = function(){
 volumeUI.onmouseup = function(){
     $("#volumeText").delay(250).fadeOut(1250);
 }
+
+//pls remove this later, just for dev purposes
+changeTheme('#3c4f65', 1);
+$('#playlistSelect').prop('selectedIndex', 0); // reset select menu to empty on page refresh
